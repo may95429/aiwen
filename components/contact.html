@@ -1,0 +1,164 @@
+<!-- ===== Contact Section ===== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <header class="contact-header">
+      <h2 class="contact-title">聯絡我</h2>
+      <p class="contact-desc">留下需求，我會在 1–2 個工作天內回覆。</p>
+    </header>
+
+    <!-- 回饋訊息（JS 控制顯示） -->
+    <div
+      class="form-alert"
+      id="formAlert"
+      role="status"
+      aria-live="polite"
+      style="display: none"
+    ></div>
+    <div class="contact-formCard">
+      <form class="form" id="contactForm" novalidate>
+        <div class="form-grid">
+          <!-- 姓名 -->
+          <div class="field">
+            <label class="field-label" for="name"
+              >姓名 <span class="req">*</span></label
+            >
+            <input
+              class="field-control"
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="請輸入姓名"
+              required
+            />
+            <small class="field-hint">例如：陳小姐</small>
+            <small class="field-error" data-error-for="name" hidden></small>
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label class="field-label" for="email"
+              >Email <span class="req">*</span></label
+            >
+            <input
+              class="field-control"
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="name@example.com"
+              required
+            />
+            <small class="field-hint">我會用 Email 回覆你</small>
+            <small class="field-error" data-error-for="email" hidden></small>
+          </div>
+
+          <!-- 手機（必填） -->
+          <div class="field">
+            <label class="field-label" for="phone"
+              >手機 <span class="req">*</span></label
+            >
+            <input
+              class="field-control"
+              id="phone"
+              name="phone"
+              type="tel"
+              inputmode="numeric"
+              autocomplete="tel"
+              placeholder="09xxxxxxxx"
+              required
+            />
+            <small class="field-hint">台灣手機格式：09 開頭，共 10 碼</small>
+            <small class="field-error" data-error-for="phone" hidden></small>
+          </div>
+
+          <!-- LINE ID（選填） -->
+          <div class="field">
+            <label class="field-label" for="lineId">LINE ID（選填）</label>
+            <input
+              class="field-control"
+              id="lineId"
+              name="lineId"
+              type="text"
+              autocomplete="off"
+              placeholder="例如：moonye-design"
+            />
+            <small class="field-hint"
+              >可填可不填；若填需至少 4 碼（英數 . _ -）</small
+            >
+            <small class="field-error" data-error-for="lineId" hidden></small>
+          </div>
+
+          <!-- 主旨 -->
+          <div class="field field-full">
+            <label class="field-label" for="subject"
+              >主旨 <span class="req">*</span></label
+            >
+            <input
+              class="field-control"
+              id="subject"
+              name="subject"
+              type="text"
+              placeholder="例如：想製作一頁式招生網站"
+              required
+              minlength="3"
+            />
+            <small class="field-error" data-error-for="subject" hidden></small>
+          </div>
+
+          <!-- 訊息 -->
+          <div class="field field-full">
+            <label class="field-label" for="message"
+              >需求描述 <span class="req">*</span></label
+            >
+            <textarea
+              class="field-control field-control-textarea"
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="請簡述你的需求、預算範圍、希望上線時間…"
+              required
+              minlength="10"
+            ></textarea>
+            <small class="field-hint">至少 10 個字，越具體越好</small>
+            <small class="field-error" data-error-for="message" hidden></small>
+          </div>
+
+          <!-- 同意條款 -->
+          <div class="field field-full">
+            <label class="check">
+              <input
+                class="check-box"
+                type="checkbox"
+                name="agree"
+                id="agree"
+                required
+              />
+              <span class="check-text"
+                >我同意你可以使用以上資訊回覆我（必填）</span
+              >
+            </label>
+            <small class="field-error" data-error-for="agree" hidden></small>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <div class="form-actionsRow">
+            <button class="btn" type="submit" id="submitBtn">
+              <span class="btn-text">送出訊息</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+
+            <small class="form-note">送出後會顯示成功/失敗訊息</small>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  defer
+></script>
+<script src="js/contact.js" defer></script>

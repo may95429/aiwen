@@ -1,0 +1,78 @@
+/* =========================
+   Project Page Only
+   （只給作品內頁使用）
+========================= */
+/* 標題與描述 */
+.project-title {
+  font-size: var(--font-xl);
+  font-weight: 800;
+  margin-bottom: var(--space-sm);
+}
+
+.project-desc {
+  font-size: var(--font-base);
+  color: var(--color-gray);
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+/* 分隔線 （僅視覺)*/
+.border-bottom {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.border-top {
+  border-top: 1px solid var(--color-border);
+}
+
+/* 淺底背景背景 */
+.bg-light {
+  background-color: var(--color-light);
+}
+
+/* 圖片 */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-soft);
+  margin-top: var(--space-sm);
+}
+
+/* Project Meta */
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-md);
+}
+
+.meta-item h6 {
+  font-size: var(--font-sm);
+  color: var(--color-gray);
+  margin-bottom: 6px;
+}
+
+.meta-item p {
+  font-size: var(--font-base);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* List */
+.project-list {
+  font-size: var(--font-base);
+  line-height: 1.6;
+  color: var(--color-dark);
+  margin-top: var(--space-sm);
+  padding-left: 20px;
+}
+
+.project-list.number {
+  list-style: decimal;
+}
+
+/* Actions */
+.card-actions {
+  margin-top: var(--space-md);
+}

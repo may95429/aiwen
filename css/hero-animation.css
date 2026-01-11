@@ -1,0 +1,218 @@
+/* =========================
+   Hero Slider（穩定版：radio 控顯示 + JS 自動切換）
+========================= */
+
+/* z-index 層級整理（只用 4 層）
+   1: 背景
+   2: 漸層遮罩
+   3: 文字/按鈕
+   4: 箭頭/圓點
+*/
+
+.hero {
+  position: relative;
+  height: 85vh;
+  overflow: hidden;
+}
+
+/* 隱藏 radio */
+.hero input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slides {
+  position: relative;
+  height: 100%;
+}
+
+/* Slide */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* 背景 */
+.slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.slide-bg-1 { background-image: url("../assets/images/hero-1.png"); }
+.slide-bg-2 { background-image: url("../assets/images/hero-2.png"); }
+.slide-bg-3 { background-image: url("../assets/images/hero-3.png"); }
+
+/* 遮罩 */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  z-index: 2;
+}
+
+/* 內容：淡入微動畫（用 transition，不用 keyframes，才不會打架）  */
+.slide-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--space-lg);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-sm);
+
+  color: var(--color-white);
+  text-align: left;
+}
+
+.slide-content h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Active：被 checked 的那張才顯示 */
+#hero-1:checked ~ .slides .slide-1,
+#hero-2:checked ~ .slides .slide-2,
+#hero-3:checked ~ .slides .slide-3 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 箭頭 只顯示「當前那張」該顯示的一對*/
+.arrows {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none; /* 容器不吃點擊 */
+}
+
+.arrow {
+  pointer-events: auto; /* label 自己可點 */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  line-height: 1;
+  color: var(--color-white);
+  opacity: 0.65;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+.prev { left: 16px; }
+.next { right: 16px; }
+
+.arrow { display: none; }
+
+#hero-1:checked ~ .arrows .prev-1,
+#hero-1:checked ~ .arrows .next-1,
+#hero-2:checked ~ .arrows .prev-2,
+#hero-2:checked ~ .arrows .next-2,
+#hero-3:checked ~ .arrows .prev-3,
+#hero-3:checked ~ .arrows .next-3 {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .slide-content {
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+  .arrows {
+    display: none;    /* 平板以下全部隱藏 */
+  }  
+}
+
+
+
+/* 圓點 ：同步亮起（靠 :checked） */
+.dots {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-xs);
+  z-index: 4;
+}
+
+.dots label {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+}
+
+#hero-1:checked ~ .dots label:nth-child(1),
+#hero-2:checked ~ .dots label:nth-child(2),
+#hero-3:checked ~ .dots label:nth-child(3) {
+  background: var(--color-white);
+}
+
+/* =========================
+   Hover 暫停：由 JS 停 interval（CSS 只做視覺不變）
+========================= */
+
+/* =========================
+   📱 Mobile：換直式圖 + 文字更簡化
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    height: 86vh;
+    min-height: 520px;
+  }
+
+  /* 手機直式圖 */
+  .slide-bg-1 { background-image: url("../assets/images/hero-1-mobile.png"); }
+  .slide-bg-2 { background-image: url("../assets/images/hero-2-mobile.png"); }
+  .slide-bg-3 { background-image: url("../assets/images/hero-3-mobile.png"); }
+
+  /* 手機遮罩改成上下漸層 */
+  .slide-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.18)
+    );
+  }
+
+  .slide-content {
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .slide-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .slide-desc {
+    display: none; /* ❌ 手機不讀長文 */
+  }
+
+  
+  .prev { left: 10px; }
+  .next { right: 10px; }
+}

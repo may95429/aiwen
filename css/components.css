@@ -1,0 +1,95 @@
+/* =========================
+   Works Section（留白關鍵）
+========================= */
+
+/* Works Grid */
+.works-grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .works-section {
+    padding: 0 36px;      /* 👉 左右留白 */
+  }
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .works-section {
+    padding: 0 clamp(20px, 4vw, 56px);      /* 👉 手機左右留白 */
+  }
+  .works-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* Card Base */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transform: var(--transition-slow),
+              box-shadow var(--transition-slow),
+              border-color var(--transition-slow);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:0 14px 30px rgba(0, 0, 0, 0.10);
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+/* Card Media */
+.card-media {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 10; /* 讓每張卡片圖片高度一致 */
+  overflow: hidden;
+}
+.card-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.5s ease;/* 圖片也微互動 */
+}
+.card:hover .card-media img {
+  transform: scale(1.06);
+}
+
+/* Card Body */
+.card-body {
+  padding: var(--space-sm);
+}
+.card-title {
+  font-size: var(--font-lg);
+  color: var(--color-dark);
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+.card-desc {
+  font-size: var(--font-sm);
+  color: var(--color-text-muted);
+  margin: 0 0 14px;
+}
+
+/* Tags */
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-light);
+  color: var(--color-text-muted);
+}

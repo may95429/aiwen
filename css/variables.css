@@ -1,0 +1,51 @@
+:root {
+  /* 🎨 色彩 */
+  --color-primary: #6b5bcc;
+  --color-primary-dark: #5a4abd;
+  --color-secondary: #f8fafc;
+  --color-accent: #f59e0b;
+  --color-dark: #0f172a;
+  --color-gray: #6b7280;
+  --color-light: #f3f4f6;
+  --color-white: #ffffff;
+  --color-border: #e5e7eb;
+  --color-text: #222;
+  --color-text-muted:#555;
+  
+
+  /* 🅰️ 字級 */
+  --font-base: 16px;
+  --font-sm: 14px;
+  --font-xs: 12px;
+  --font-lg: 18px;
+  --font-xl: 28px;
+  --font-xxl: 36px;
+
+  /* 📏 間距 */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 96px;
+
+  /* 🎁 圓角 */
+  --radius-sm: 8px;
+  --radius-base: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* 🧱 容器寬度 */
+  --container-max: 1200px;
+  --container-padding: 30px;
+
+  /* ☁️ 陰影 */
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-strong: 0 12px 26px rgba(0, 0, 0, 0.25);
+
+  /* 動畫過渡效果 */
+  --transition-default: all 0.2s ease; /*套用到所有可過渡的屬性,0.2 秒,緩進緩出*/
+  --transition-fast: all 0.1s ease;
+  --transition-slow: all 0.25s ease-in-out;/*慢開始、慢結束*/
+
+
+}

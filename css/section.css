@@ -1,0 +1,61 @@
+/* Section 通用 */
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section-alt {
+  background-color: var(--color-secondary);
+}
+
+.section-header {
+  max-width: 600px;
+  margin-bottom: var(--space-lg);
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+
+}
+
+/* Body */
+.section-text {
+  max-width: 720px;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+/* Grid（服務卡片） */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.service-card {
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--radius-base);
+}
+
+
+
+.service-card h3 {
+  margin-bottom: 12px;
+}
+
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px var(--space-sm);
+    grid-template-columns: 1fr;
+  }
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+}

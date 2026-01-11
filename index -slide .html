@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>文悅線上學習</title>
+
+    <!-- 基礎樣式 -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/hero-slide.css" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/hero-1.png"
+      fetchpriority="high"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <!-- Logo / 品牌名稱 -->
+        <div class="logo">
+          <a href="/">
+            <img src="assets/images/logo-full.png" alt="Moonye 網頁設計" />
+          </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="#works">作品</a></li>
+            <li><a href="#services">服務</a></li>
+            <li><a href="#about">關於我</a></li>
+            <li><a href="#contact">聯絡</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="開啟選單" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+      <section class="hero">
+        <!-- Slider 狀態控制 -->
+        <input type="radio" name="slider" id="slide-1" checked />
+        <input type="radio" name="slider" id="slide-2" />
+        <input type="radio" name="slider" id="slide-3" />
+
+        <!-- Slides -->
+        <div class="slides">
+          <!-- Slide 1 -->
+          <div class="slide">
+            <div class="slide-bg slide-bg-1"></div>
+            <div class="slide-overlay"></div>
+
+            <div class="slide-content">
+              <h1>用對的方法學習<br />讓知識真的用得上</h1>
+              <p class="slide-desc">
+                實作導向的線上學習平台，陪你完成可展示的作品。
+              </p>
+              <div class="actions">
+                <a href="#" class="btn primary">開始學習</a>
+                <a href="#" class="btn outline">了解平台</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide">
+            <div class="slide-bg slide-bg-2"></div>
+            <div class="slide-overlay"></div>
+
+            <div class="slide-content">
+              <h1>從基礎到接案<br />一步一步帶你做</h1>
+              <p class="slide-desc">不只教語法，更教你如何完成真實專案。</p>
+              <div class="actions">
+                <a href="#" class="btn primary">查看課程</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide">
+            <div class="slide-bg slide-bg-3"></div>
+            <div class="slide-overlay"></div>
+
+            <div class="slide-content">
+              <h1>學習不是堆知識<br />而是累積能力</h1>
+              <p class="slide-desc">適合設計師、初學者的前端學習路線。</p>
+              <div class="actions">
+                <a href="#" class="btn primary">學習路徑</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider 導航 -->
+        <div class="slider-nav">
+          <label for="slide-1"></label>
+          <label for="slide-2"></label>
+          <label for="slide-3"></label>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer（之後補） -->
+    <footer></footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

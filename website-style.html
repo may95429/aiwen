@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>網站風格樣式表｜Style Guide</title>
+
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/variables-style.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/style-guide.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="container header-container">
+        <!-- Logo / 品牌名稱 -->
+        <div class="logo">
+          <a href="/">
+            <img src="assets/images/logo-full.png" alt="艾文線上學習" />
+          </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="#header">首頁</a></li>
+            <li><a href="#works">課程介紹</a></li>
+            <li><a href="website-style.html">風格樣式表</a></li>
+            <li><a href="#contact">聯絡我們</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="開啟選單" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1 class="guide-title">網站風格樣式表（Style Guide）</h1>
+
+      <!-- 色彩 -->
+      <section>
+        <h2>🎨 色彩規範</h2>
+        <p>以下為網站主要使用色彩與應用情境。</p>
+
+        <div class="grid">
+          <div class="color-box primary">
+            主色（Primary）<br />
+            #2563eb <br />
+            <small>用於 CTA 按鈕、連結重點強調</small>
+          </div>
+          <div class="color-box secondary">
+            輔色（Secondary）<br />
+            #f8fafc <br />
+            <small>常見於背景色或卡片區塊</small>
+          </div>
+          <div class="color-box accent">
+            強調色（Accent）<br />
+            #f59e0b <br />
+            <small>用於提示、數據、ICON 等吸睛元素</small>
+          </div>
+          <div class="color-box dark">
+            深色（Dark）<br />
+            #0f172a <br />
+            <small>用於標題、頁尾、深色背景</small>
+          </div>
+          <div class="color-box gray">
+            灰色（Gray）<br />
+            #6b7280 <br />
+            <small>用於副標題、輔助文字</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- 字體 -->
+      <section>
+        <h2>🔤 字體層級</h2>
+        <p>建立清楚階層與視覺節奏，適用於各類內容排版。</p>
+
+        <h1>主標題 H1（32px）</h1>
+        <h2>區塊標題 H2（28px）</h2>
+        <h3>次標題 H3（24px）</h3>
+        <p class="subtitle">副標題／說明文字（18px）－適用於區塊簡介</p>
+        <p>
+          內文文字（16px）：這是一段範例內文，展示實際閱讀時的行高與字距，適合用於介紹、文章、說明內容。
+        </p>
+      </section>
+
+      <!-- 按鈕 -->
+      <section>
+        <h2>🔘 按鈕樣式</h2>
+        <p>使用於主要／次要行動引導（如：聯絡、報名、了解更多）</p>
+
+        <div style="margin-top: 16px">
+          <button class="btn btn-primary">主要按鈕（Primary）</button>
+          <button class="btn btn-secondary">次要按鈕（Secondary）</button>
+          <button class="btn btn-primary" disabled>停用狀態（Disabled）</button>
+        </div>
+      </section>
+
+      <!-- 元件示意 -->
+      <section>
+        <h2>📦 元件示意</h2>
+        <p>以下展示實際使用風格的元件區塊。</p>
+
+        <!-- 卡片 -->
+        <div class="grid">
+          <div class="demo-card">
+            <h3>卡片標題</h3>
+            <p>這是一張資訊卡片，常用於服務說明、作品展示、文章模組等。</p>
+            <a href="#" class="btn btn-secondary">了解更多</a>
+          </div>
+          <div class="demo-card">
+            <h3>卡片標題</h3>
+            <p>這是一張資訊卡片，常用於服務說明、作品展示、文章模組等。</p>
+            <a href="#" class="btn btn-secondary">了解更多</a>
+          </div>
+          <div class="demo-card">
+            <h3>卡片標題</h3>
+            <p>這是一張資訊卡片，常用於服務說明、作品展示、文章模組等。</p>
+            <a href="#" class="btn btn-secondary">了解更多</a>
+          </div>
+        </div>
+        <!-- 表單欄位 -->
+        <div class="demo-form">
+          <label for="name">姓名</label>
+          <input type="text" id="name" placeholder="請輸入您的姓名" />
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="assets/images/logo-full.png" alt="艾文線上學習" />
+          <p>
+            艾文線上學習，專注實作導向的前端與設計教學，
+            陪你完成可展示、可接案的作品。
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-links">
+          <h3>快速連結</h3>
+          <ul>
+            <li><a href="#">課程介紹</a></li>
+            <li><a href="#">學習路徑</a></li>
+            <li><a href="#">關於我們</a></li>
+            <li><a href="#">聯絡我們</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h3>聯絡方式</h3>
+          <ul>
+            <li>Email：aiwen@edu.tw</li>
+            <li>LINE：@moonye</li>
+            <li>台灣 · 線上服務</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+
+      <div class="footer-bottom">
+        © <span id="year"></span> 艾文線上學習 Moonye. All rights reserved.<span
+          >&nbsp;| 聯絡我們：<a href="mailto:aiwen@edu.tw"
+            >aiwen@edu.tw</a
+          ></span
+        >
+      </div>
+    </footer>
+
+    <!-- Floating Buttons 浮動聯絡按鈕 -->
+    <div class="floating-buttons">
+      <!-- LINE -->
+      <a href="#" class="float-btn line" aria-label="LINE">
+        <span>LINE</span>
+      </a>
+
+      <!-- Facebook -->
+      <a href="#" class="float-btn fb" aria-label="Facebook">
+        <span>f</span>
+      </a>
+
+      <!-- Phone -->
+      <a href="tel:0912345678" class="float-btn phone" aria-label="電話">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M6.6 10.8a15.4 15.4 0 006.6 6.6l2.2-2.2a1 1 0 011-.2 11.4 11.4 0 003.6.6 1 1 0 011 1v3.6a1 1 0 01-1 1C10.4 21.2 2.8 13.6 2.8 4a1 1 0 011-1H7.4a1 1 0 011 1 11.4 11.4 0 00.6 3.6 1 1 0 01-.2 1z"
+          />
+        </svg>
+      </a>
+
+      <!-- Email -->
+      <a
+        href="mailto:hello@moonye.com"
+        class="float-btn email"
+        aria-label="Email"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M2 6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2 0l8 5 8-5"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="回到頁首">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 4l-8 8h5v8h6v-8h5z" />
+      </svg>
+    </button>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

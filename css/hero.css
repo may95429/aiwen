@@ -26,9 +26,9 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.45) 0%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0.15) 60%,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    rgba(0, 0, 0, 0.2) 60%,
     rgba(0, 0, 0, 0) 100%
   );
   z-index: 2;
@@ -97,12 +97,14 @@
 
   .hero-content {
     left: 0;
-    bottom: -150px;
+    bottom: -110px;
   }
 
   .hero-title {
     font-size: var(--font-lg);
     line-height: 1.4;
+    position: relative;
+    left: 15px;
   }
 
   /* 手機只留一個 CTA */

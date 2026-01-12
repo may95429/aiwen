@@ -1,0 +1,26 @@
+body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+        background-color: var(--color-light);
+        color: var(--color-dark);
+        padding: var(--space-lg);
+      }
+
+      .container {
+        max-width: 600px;
+      }
+
+      h1 {
+        font-size: var(--font-xxl);
+        margin-bottom: var(--space-sm);
+      }
+
+      p {
+        font-size: var(--font-lg);
+        margin-bottom: var(--space-md);
+        color: var(--color-gray);
+      }
+    

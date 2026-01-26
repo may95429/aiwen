@@ -88,7 +88,7 @@
 ========================= */
 @media (max-width: 768px) {
   .hero-bg {
-    content: url("../assets/images/hero-learning-mobile.png");
+    content: url("../assets/images/hero-learning-mobile.webp");
   }
 
   .hero {

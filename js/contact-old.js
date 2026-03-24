@@ -9,9 +9,6 @@
   const EMAILJS_SERVICE_ID = "service_gtbkfrr";
   const EMAILJS_TEMPLATE_ID = "template_259jqrq";
 
-  // 換成你的 n8n Production Webhook URL
-  const N8N_WEBHOOK_URL = "https://may95429.app.n8n.cloud/webhook-test/contact-form";
-
   const SUCCESS_ALERT_DURATION = 20000;
   let alertTimer = null;
   let currentAlertType = null;
@@ -37,6 +34,8 @@
 
   const scrollToAlert = () => {
     const offset = getNavbarOffset();
+
+    // 先取得 alertBox 的位置
     const rect = alertBox.getBoundingClientRect();
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const targetY = rect.top + scrollTop - offset;
@@ -173,28 +172,14 @@
     return true;
   };
 
-  const buildPayload = () => {
-    return {
-      name: fields.name.value.trim(),
-      email: fields.email.value.trim(),
-      phone: fields.phone.value.trim(),
-      lineId: fields.lineId.value.trim(),
-      subject: fields.subject.value.trim(),
-      message: fields.message.value.trim(),
-      agree: fields.agree.checked,
-      source: "GitHub Pages Contact Form",
-      page_url: window.location.href,
-      user_agent: navigator.userAgent,
-      created_at: new Date().toISOString(),
-    };
-  };
-
   Object.keys(fields).forEach((name) => {
     const el = fields[name];
     if (!el) return;
 
     el.addEventListener("input", () => {
+      // ✅ 輸入時重新驗證該欄位（解決紅框問題）
       validateOne(name);
+
       if (currentAlertType === "error") hideAlert();
     });
 
@@ -220,36 +205,17 @@
     submitBtn.disabled = true;
     submitBtn.setAttribute("aria-busy", "true");
 
-    const originalBtnText = submitBtn.querySelector(".btn-text");
-    if (originalBtnText) originalBtnText.textContent = "送出中...";
-
-    const payload = buildPayload();
-
     try {
-      // 1. 先送到 n8n
-      const webhookRes = await fetch(N8N_WEBHOOK_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (!webhookRes.ok) {
-        throw new Error(`n8n webhook failed: ${webhookRes.status}`);
-      }
-
-      // 2. 再送 EmailJS
       await window.emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          name: payload.name,
-          email: payload.email,
-          phone: payload.phone,
-          lineId: payload.lineId || "未填寫",
-          subject: payload.subject,
-          message: payload.message,
+          name: fields.name.value.trim(),
+          email: fields.email.value.trim(),
+          phone: fields.phone.value.trim(),
+          lineId: fields.lineId.value.trim(),
+          subject: fields.subject.value.trim(),
+          message: fields.message.value.trim(),
         }
       );
 
@@ -260,12 +226,10 @@
         Object.keys(fields).forEach(clearFieldError);
       }, 500);
     } catch (err) {
-      console.error(err);
       showAlert("error", "送出失敗，請稍後再試");
     } finally {
       submitBtn.disabled = false;
       submitBtn.removeAttribute("aria-busy");
-      if (originalBtnText) originalBtnText.textContent = "送出訊息";
     }
   });
 })();

@@ -10,7 +10,7 @@
   const EMAILJS_TEMPLATE_ID = "template_259jqrq";
 
   // 換成你的 n8n Production Webhook URL
-  const N8N_WEBHOOK_URL = "https://may95429.app.n8n.cloud/webhook-test/contact-form";
+  const N8N_WEBHOOK_URL = "https://may95429.app.n8n.cloud/webhook/contact-form";
 
   const SUCCESS_ALERT_DURATION = 20000;
   let alertTimer = null;

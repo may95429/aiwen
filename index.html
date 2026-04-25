@@ -524,37 +524,55 @@
       </svg>
     </button>
 
-    <button
-      onclick="toggleChat()"
-      style="
+    <!-- 💬 聊天按鈕 -->
+    <button onclick="toggleChat()" id="chatBtn">💬</button>
+
+    <!-- 🪟 聊天視窗 -->
+    <iframe
+      id="chatbox"
+      src="project-sys8e-ndy4tvhm5-may95429s-projects.vercel.app"
+    >
+    </iframe>
+
+    <style>
+      /* 按鈕樣式 */
+      #chatBtn {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         border-radius: 50%;
-        font-size: 24px;
-      "
-    >
-      💬
-    </button>
+        border: none;
+        background: linear-gradient(135deg, #6c63ff, #4caf50);
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
 
-    <iframe
-      id="chatbox"
-      src="https://project-sys8e-ndy4tvhm5-may95429s-projects.vercel.app"
-      style="
+        /* 🔥 關鍵：浮在最上層 */
+        z-index: 9999;
+
+        /* 美化 */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      /* 聊天框 */
+      #chatbox {
         display: none;
         position: fixed;
-        bottom: 90px;
+        bottom: 100px;
         right: 20px;
-        width: 300px;
-        height: 400px;
+        width: 320px;
+        height: 420px;
         border: none;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      "
-    >
-    </iframe>
+        border-radius: 12px;
+
+        /* 🔥 關鍵：浮在最上層 */
+        z-index: 9999;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+    </style>
 
     <script>
       function toggleChat() {
